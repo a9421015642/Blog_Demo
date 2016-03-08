@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 20160308135855) do
     t.boolean "like_notlike"
   end
 
-  create_table "prolfiles", force: :cascade do |t|
+  create_table "profiles", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "chinesname"
     t.string   "englishname"
@@ -65,7 +65,7 @@ ActiveRecord::Schema.define(version: 20160308135855) do
     t.datetime "updated_at"
   end
 
-  add_index "prolfiles", ["user_id"], name: "index_prolfiles_on_user_id"
+  add_index "profiles", ["user_id"], name: "index_profiles_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
