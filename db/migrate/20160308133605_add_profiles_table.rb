@@ -2,7 +2,7 @@ class AddProfilesTable < ActiveRecord::Migration
   def change
     create_table :profiles do |t|
       t.integer :user_id
-      t.string :chinesname
+      t.string :chinesename
       t.string :englishname
       t.string :nickname
       t.integer :gender

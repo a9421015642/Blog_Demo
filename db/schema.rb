@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 20160308135855) do
 
   create_table "profiles", force: :cascade do |t|
     t.integer  "user_id"
-    t.string   "chinesname"
+    t.string   "chinesename"
     t.string   "englishname"
     t.string   "nickname"
     t.integer  "gender"
