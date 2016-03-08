@@ -1,0 +1,52 @@
+<%= form_for @profile do |f| %>
+  <div class="col-md-12">
+  <%#= f.hidden_field :user_id, :value => session[:user_id] %>   
+  <div class="form-group">
+    <%= f.label :中文姓名 %>   ( *必填 )
+  <br>
+    <%= f.text_field :chinesename %>
+  </div>
+  <div class="form-group">
+    <%= f.label :英文名字 %>
+  <br>
+    <%= f.text_field :englishname %>
+  </div>
+    <div class="form-group">
+    <%= f.label :綽號 %>
+  <br>
+    <%= f.text_field :nickname %>
+  </div>
+  <div class="form-group">
+    <%= f.label :性別 %>  ( *必填 )
+  <br>
+    <%= f.radio_button :gender, 1 %>
+    <%= label_tag :男 %>
+    <%= f.radio_button :gender, 0 %>
+    <%= label_tag :女 %>
+  </div>
+  <div class="form-group">
+    <%= f.label "#{:生日} (1990/01/01)" %>
+  <br>
+    <%= f.date_field :birthday %>
+  </div>
+  <div class="form-group">
+    <%= f.label "地址" %>
+  <br>
+    <%= f.text_field :address %>
+  </div>
+    <div class="form-group">
+    <%= f.label "手機" %>   ( 0905111222)
+  <br>
+    <%= f.text_field :phone %>
+  </div>
+  </div>
+  </div>
+  </div>
+  <div class="row">
+    <div class="container">
+    <div class="col-md-7">
+      <div class="pull-right">
+      <%= submit_tag "確認", class: "btn btn-success" %>
+      </div>
+    </div>
+<% end %>

@@ -4,6 +4,8 @@ class SessionsController < ApplicationController
   end
 
   def new
+    @categories = Category.all
+    @articles = Article.all 
   end
   def create
     user = User.find_by(name: params[:name])

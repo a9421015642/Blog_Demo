@@ -1,0 +1,28 @@
+
+    <div class="col-md-1"></div>
+    <div class="col-md-2">
+      <div id="sidebar">
+      <ul class ="blog_about">
+        <li class="category"></li>
+        <% if !logged_in? %>
+        <li>Hello Blog !!! </li>
+        <% else %>
+        <li><%= link_to '關於我', user_path(current_user) %></li>
+        <li><%= link_to '新增文章', new_article_path %></li>
+        <li><a href="#">Github</a></li>
+        <% end %>
+      </ul>
+      <ul class ="blog_category">
+        <li class="category">分類</li>
+        <% @categories.each do |category| %>
+        <li><a href="#"><%= category.tile %>(<%= category.article.count %>)</a></li>
+        <% end %>
+      </ul>
+    </div>
+    </div>
+<div class="fixed">
+  <a href="#blog_top">
+    <span class ="glyphicon glyphicon-triangle-top"></span>
+    <p>TOP</p>
+  </a>
+</div>

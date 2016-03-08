@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="all_article">
+  <div class="container-full">
+<%= render 'shared/article_index'  %>
+    <div class="col-md-8">
+    <div class="container-full">
+      <div class="content_all_article">
+      <%= render 'shared/title', title:  '關於我'   ,style: "text-align:left;" %>
+      <div class="container">
+       <div class="col-md-1"></div>
+       <div class="col-md-8">
+       <%  if user_profile?  %>
+       <h3>姓名 : <%= user_profile_find.chinesename%></h3>
+       <h3>英文姓名 : <%= user_profile_find.englishname%></h3>
+       <h3>綽號 : <%= user_profile_find.nickname%></h3>
+       <h3>性別 : <%= user_profile_gender%></h3>
+       <h3>生日 : <%= user_profile_find.birthday%></h3>
+       <h3>住址 : <%= user_profile_find.address%></h3>
+       <h3>手機 : <%= user_profile_find.phone%></h3>
+       <div class="pull-right"><%= link_to "編輯個人資料", edit_profile_path , class: 'btn btn-primary' %></div>
+       <%  else  %>
+       <%= link_to "新增個人資料", new_profile_path , class: 'btn btn-primary' %>
+       <%  end  %>
+       </div>
+       <div class="col-md-3"></div>
+      </div>
+      </div>      
+    </div>
+    </div>
+    </div>
+  </div>
+</div>
