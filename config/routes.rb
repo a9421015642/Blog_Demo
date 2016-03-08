@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'users#index'
+  root 'articles#index'
   resources :users
   resources :profiles
   resources :articles do 

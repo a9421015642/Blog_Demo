@@ -1,3 +1,62 @@
 // Place all the styles related to the articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.navbar-inverse{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.fixed  a{
+  position: fixed;
+  bottom: 5%;
+  right: 1%;
+  height: 60px;
+  width: 60px;
+  background-color: green;
+  color :white;
+  font-size: 20px;
+  text-align:center;
+}
+.content{
+    background-color: red;
+    width: 100%;
+}
+.aside_right{
+    width: 100%;
+}
+.row .all_article{
+  margin: 51px 0 0 0;
+}
+.logo img {
+  max-height : 50px;
+  max-width : 50px;
+}
+.blog_about {
+  height : 200px;
+  line-height: 40px
+}
+.blog_category {
+  height : 200px;
+  line-height: 40px
+}
+ul li {
+  display:block;
+  font-size : 20px;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.all_article .sidebar{
+    background-color: green;
+}
+#sidebar{
+  background-color: #222222;
+  height: 700px;
+  width: 100%;
+  color:white;
+  margin :0 auto;
+}
+.category{
+  height : 30px;
+}
