@@ -13,9 +13,11 @@
         <% end %>
       </ul>
       <ul class ="blog_category">
-        <li class="category">分類</li>
+        <li class="category">
+        <%= link_to '分類 + ', categories_path %>
+        </li>
         <% @categories.each do |category| %>
-        <li><a href="#"><%= category.tile %>(<%= category.article.count %>)</a></li>
+        <li><a href="#"><%= category.title %>(<%#= category.article.count %>)</a></li>
         <% end %>
       </ul>
     </div>
