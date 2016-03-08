@@ -6,7 +6,6 @@
       <div id="sidebar">
       <ul class ="blog_about">
         <li class="category"></li>
-        <li><%= link_to "Blog" , root_path %></li>
         <li>關於我</li>
       </ul>
       <ul class ="blog_category">
@@ -21,7 +20,7 @@
     <div class="col-md-8">
     <div class="container-full">
       <div class="content_all_article">
-        <%= render 'shared/title', title: '文章總覽'%>
+        <%= render 'shared/title', title: '文章總覽'  ,style: "text-align:center;" %>
        <% @articles.each do |article| %>
         <div class="row">
           <div class="well col-md-6">

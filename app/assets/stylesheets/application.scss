@@ -20,5 +20,19 @@
 }
 html, body {
    height: 100%;
-   margin:0 auto;
+}
+body {
+   margin: 51px 0 0 0;
+}
+a:hover {
+  color: darkgray;
+  text-decoration: none;
+}
+a{
+  color :white;
+}
+.blog_demo{
+  font-size: 30px;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight:bolder;
 }
