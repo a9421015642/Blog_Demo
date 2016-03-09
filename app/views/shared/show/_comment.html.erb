@@ -1,28 +1,19 @@
 <h4>(<%= @comment_article_count %>)Comments</h4>
 <% if logged_in? %>
-  <%= form_for [@article, @comment] do |f| %>
-    <div class="row">
-    <div class="container">
-    <h4>Blog  留言  :</h4>
-      <%= f.text_area :content, rows: 3, class: 'col-md-4' %>
-      <div class="col-md-2">
-        <%= f.submit '確認', class: 'btn btn-primary' %>
-      </div>
-      </div>
-    </div>
-    <br>
-  <% end %>
+<%= render 'shared/create_edit/comment'%>
 <% end %>
 
 <% @article.comments.each do |comment| %>
   <div class="row">
-    <div class="col-md-6 well">
+  <div class="container">
+    <div class="col-md-7 well">
       <p>
         <%= comment.content %>
       </p>
       <br>
       <small class="pull-right">commented by <%= "#{comment.user.name}" %></small>
     </div>
+  </div>
   </div>
 <% end %>
 

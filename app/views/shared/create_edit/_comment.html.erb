@@ -1,0 +1,12 @@
+  <%= form_for [@article, @comment] do |f| %>
+    <div class="row">
+    <div class="container">
+    <h4>Blog  留言  :</h4>
+      <%= f.text_area :content, rows: 3, class: 'col-md-4' %>
+      <div class="col-md-2">
+        <%= f.submit '確認', class: 'btn btn-primary' %>
+      </div>
+      </div>
+    </div>
+    <br>
+  <% end %>

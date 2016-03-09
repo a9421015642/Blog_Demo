@@ -17,7 +17,7 @@
        <h3>生日 : <%= user_profile_find.birthday%></h3>
        <h3>住址 : <%= user_profile_find.address%></h3>
        <h3>手機 : <%= user_profile_find.phone%></h3>
-       <div class="pull-right"><%= link_to "編輯個人資料", edit_profile_path , class: 'btn btn-primary' %></div>
+       <div class="pull-right"><%= link_to "編輯個人資料", edit_profile_path(current_user) , class: 'btn btn-primary' %></div>
        <%  else  %>
        <%= link_to "新增個人資料", new_profile_path , class: 'btn btn-primary' %>
        <%  end  %>

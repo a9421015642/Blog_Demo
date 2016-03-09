@@ -6,8 +6,8 @@
     <h1><%= @article.title %></h1>
     </div>
     <div class="col-md-4">
-    <%= link_to '編輯文章', root_path , class: 'btn btn-primary pull-left ' %>
-    <%= link_to '刪除文章', root_path , class: 'btn btn-primary pull-right ' %>
+    <%= link_to '編輯文章', edit_article_path(@article) , class: 'btn btn-primary pull-left ' %>
+    <%= link_to '刪除文章', article_path(@article), method: :delete,data: {confirm: 'Are you sure? '} , class: 'btn btn-primary pull-right ' %>
     </div>
     </div>
     <div class="col-md-12 well">

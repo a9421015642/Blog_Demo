@@ -36,6 +36,32 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def edit
+    @categories = Category.all
+    @article =  Article.find(params[:id])
+  end
+  def update
+    @article = Article.find(params[:id])    
+      
+      if @article.update!(article_params)
+      redirect_to article_path  
+    else
+      render :edit
+    end 
+  end
+
+  def destroy
+    @article = Article.find(params[:id])
+    @comment_article = Comment.where(article_id: @article.id)
+    
+      if @article.destroy!
+        @comment_article.each do |t|
+          t.destroy!
+        end
+      redirect_to articles_path
+    end
+  end
+
  private 
   def  article_params
     params.require(:article).permit(:title , :content, :category_id)
