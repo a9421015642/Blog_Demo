@@ -1,9 +1,17 @@
 class ArticlesController < ApplicationController
   include SessionsHelper
+  
   def index
     @categories = Category.all
     @articles = Article.all
+     if params[:search]
+        @article_search = Article.search(params[:search]).order("created_at DESC")
+        render :search
+      else
+        @article_search = Article.all.order('created_at DESC')
+      end
   end
+
   def show
     @categories = Category.all
     @article = Article.find(params[:id])

@@ -5,6 +5,8 @@
         <li class="category"></li>
         <% if !logged_in? %>
         <li>Hello Blog !!! </li>
+        <li><%= link_to "文章總覽 " , root_path %></li>
+        <li><a  target=_blank href="https://github.com/a9421015642">Github</a></li>
         <% else %>
         <li><%= link_to '關於我', user_path(current_user) %></li>
         <li><%= link_to '新增文章', new_article_path %></li>
