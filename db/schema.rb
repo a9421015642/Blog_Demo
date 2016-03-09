@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 20160309101120) do
     t.integer  "gender"
     t.date     "birthday"
     t.string   "address"
-    t.integer  "phone"
+    t.string   "phone"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

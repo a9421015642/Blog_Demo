@@ -8,7 +8,7 @@ class AddProfilesTable < ActiveRecord::Migration
       t.integer :gender
       t.date :birthday
       t.string :address
-      t.integer :phone
+      t.string :phone
 
       t.timestamps
     end 
