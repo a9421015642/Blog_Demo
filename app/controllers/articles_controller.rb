@@ -4,6 +4,15 @@ class ArticlesController < ApplicationController
     @categories = Category.all
     @articles = Article.all
   end
+  def show
+    @categories = Category.all
+    @article = Article.find(params[:id])
+    @comment = Comment.new
+    @comments = @article.comments
+    @comment_article = Comment.where(article_id: @article.id)
+    @comment_article_count = @comment_article.count
+  end
+
   def new
     @categories = Category.all
     @articles = Article.all
