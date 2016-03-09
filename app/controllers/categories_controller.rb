@@ -4,7 +4,11 @@ class CategoriesController < ApplicationController
     @categories = Category.all
     @articles = Article.all
   end
-
+  def show
+    @categories = Category.all
+    @category = Category.find(params[:id])
+    @articles = Article.where(category_id: @category.id)
+  end
   def new 
     @categories = Category.all
     @articles = Article.all

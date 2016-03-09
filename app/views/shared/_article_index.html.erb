@@ -16,7 +16,7 @@
         <%= link_to '分類 + ', categories_path %>
         </li>
         <% @categories.each do |category| %>
-        <li><a href="#"><%= category.title %>(<%= find_article_category_count(category.id) %>)</a></li>
+        <li><%= link_to  "#{category.title}  (#{find_article_category_count(category.id)})" , category_path(category) %></li>
         <% end %>
       </ul>
       </div>
