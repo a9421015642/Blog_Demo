@@ -6,22 +6,20 @@
     <div class="container-full">
       <div class="content_all_article">
         <%= render 'shared/title', title:  '文章總覽'   ,style: "text-align:center;" %>
-       <% @articles.each do |article| %>
         <div class="row">
           <div class="container">
-          <div class="col-md-1"></div>
-          <div class="well col-md-8">
+          <div class="col-md-10">
+          <% @articles.each do |article| %>
             <h2><%= article.title %></h2>
             <br>
             <span>
               <%= link_to "show this post", article_path(article) %>
             </span>
-            <p class="pull-right"><%= article.user.name %></p>
-          </div>
-          <div class="col-md-2"></div>
+            <p class="pull-right"><%= article.user.updated_at %> , <%= article.user.name %></p>
+            <hr>
+            <% end %>
           </div>
         </div>
-      <% end %>
       </div>      
     </div>
     </div>

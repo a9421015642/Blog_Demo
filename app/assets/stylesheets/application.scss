@@ -18,12 +18,11 @@
 * {
   box-sizing: border-box;
 }
-html, body {
-   height: 100%;
-}
+body,html {height:100%;}
 body {
    margin: 51px 0 0 0;
 }
+
 a:hover {
   color: darkgray;
   text-decoration: none;
@@ -35,4 +34,9 @@ a{
   font-size: 30px;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight:bolder;
+}
+hr{
+  color: #ADADAD  ;
+  background-color: #ADADAD ;
+  height: 2px;
 }

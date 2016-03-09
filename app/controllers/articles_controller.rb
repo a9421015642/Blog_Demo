@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-
+  include SessionsHelper
   def index
     @categories = Category.all
     @articles = Article.all
@@ -12,7 +12,7 @@ class ArticlesController < ApplicationController
   def create
     article = Article.new(article_params)
     article.user = current_user
-     if article.save
+     if article.save 
       redirect_to root_path
     else
       render :new
@@ -21,7 +21,7 @@ class ArticlesController < ApplicationController
 
  private 
   def  article_params
-    params.require(:article).permit(:title , :content)
+    params.require(:article).permit(:title , :content, :category_id)
   end
 
 end
