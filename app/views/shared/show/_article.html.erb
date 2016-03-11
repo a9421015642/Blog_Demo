@@ -13,6 +13,17 @@
     <div class="col-md-12 well">
     <p><%= @article.content %></p>
     </div>
+    <div class="col-md-1">
+        <%= form_for [@article, @like] do |f| %>
+        <%= f.hidden_field :like_notlike ,value: true , class: 'col-md-4' %>
+        <%= f.submit  ""  , class: ' img_submit ' %>
+         <% end %>
+    </div>
+    <div class="col-md-11">
+        <%  @likes.each do |t|%>
+         <%=   t.user.name %> ,
+         <%  end %>
+    </div>
     <br>
     <small class="pull-right">posted by <%= " #{@article.user.name}" %></small>
   </div>

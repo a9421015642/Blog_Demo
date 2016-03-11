@@ -19,6 +19,8 @@ class ArticlesController < ApplicationController
     @comments = @article.comments
     @comment_article = Comment.where(article_id: @article.id)
     @comment_article_count = @comment_article.count
+    @like = Like.new
+    @likes = Like.where(article_id: params[:id])
   end
 
   def new
