@@ -1,0 +1,16 @@
+        <div class="row">
+          <div class="container">
+          <div class="col-md-10">
+          <% find_comments_ten.each do |comment| %>
+          <h3><%=comment.article.title %></h3>
+            <h4><%=  comment.content %><%#= link_to " #{comment.content}", article_path(comment.article) ,class: 'comment_article'  %></h4>
+            <br>
+            <span>
+              <%= link_to "show this post", article_path(comment.article) %>
+            </span>
+            <p class="pull-right"><%= comment.user.name %></p>
+            <hr>
+            <% end %>
+          </div>
+        </div>
+      </div>      

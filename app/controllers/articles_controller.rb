@@ -23,6 +23,11 @@ class ArticlesController < ApplicationController
     @likes = Like.where(article_id: params[:id])
   end
 
+  def article_comments
+    @categories = Category.all
+    # @article = Article.find(params[:id])
+  end
+
   def new
     @categories = Category.all
     @articles = Article.all
@@ -54,10 +59,16 @@ class ArticlesController < ApplicationController
 
   def destroy
     @article = Article.find(params[:id])
-    @comment_article = Comment.where(article_id: @article.id)
+    # @comment_article = Comment.where(article_id: @article.id)
+    # @like_article = Like.where(article_id: @article.id)
+    @comment_article = destroy_table_data(Comment , @article )
+    @like_article = destroy_table_data(Like , @article )
     
       if @article.destroy!
         @comment_article.each do |t|
+          t.destroy!
+        end
+        @like_article.each do |t|
           t.destroy!
         end
       redirect_to articles_path

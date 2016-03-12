@@ -9,16 +9,21 @@
         <li><a  target=_blank href="https://github.com/a9421015642">Github</a></li>
         <% else %>
         <li><%= link_to '關於我', profile_path(current_user) %></li>
+        <%  if(current_user_grade?) %>
         <li><%= link_to '新增文章', new_article_path %></li>
+         <li><%= link_to "新的留言  (#{find_comments_ten_count}) ", article_comments_articles_path %></li>
+        <% end %>
         <li><a  target=_blank href="https://github.com/a9421015642">Github</a></li>
         <% end %>
       </ul>
       <ul class ="blog_category">
-        <li class="category">
-        <%= link_to '分類 + ', categories_path %>
-        </li>
+      <%  if(current_user_grade?) %>
+        <li class="category"><%= link_to '分類 + ', categories_path %></li>
+        <% else %>
+        <li class="category">分類 + </li>
+         <% end %>
         <% @categories.each do |category| %>
-        <li><%= link_to  "#{category.title}  (#{find_article_category_count(category.id)})" , category_path(category) %></li>
+        <li><%= link_to  "#{category.title}  (#{find_article_category_count(category)})" , category_path(category) %></li>
         <% end %>
       </ul>
       </div>

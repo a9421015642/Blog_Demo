@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   resources :articles do 
     resources :comments
     resources :likes
+    collection do
+    get  :article_comments
+    end
   end
   resources :categories
 
