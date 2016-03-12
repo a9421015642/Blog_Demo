@@ -16,7 +16,11 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     @categories = Category.all
     @articles = Article.all 
-    if @user.save
+    if @user.save!
+      if(@user.name == "admin")
+        @user.grade = 1
+        @user.save!
+      end
       redirect_to root_path
     else
       render :new
