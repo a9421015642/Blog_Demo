@@ -5,10 +5,12 @@
     <div class="col-md-8">
     <h1><%= @article.title %></h1>
     </div>
+    <%  if(current_user_grade?) %>
     <div class="col-md-4">
     <%= link_to '編輯文章', edit_article_path(@article) , class: 'btn btn-primary pull-left ' %>
     <%= link_to '刪除文章', article_path(@article), method: :delete,data: {confirm: 'Are you sure? '} , class: 'btn btn-primary pull-right ' %>
     </div>
+    <% end %>
     </div>
     <div class="col-md-12 well">
     <p><%= @article.content %></p>
