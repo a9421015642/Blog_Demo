@@ -10,10 +10,12 @@ module SessionsHelper
   def  current_user_grade?
     if current_user
       @current_user_grade = User.find_by(id: current_user.id , grade: 1)
-    else
-      @current_user_grade = User.find_by(id: 1 , grade: 1)
     end
     @current_user_grade
+  end
+
+  def find_admin
+    @admin = User.find_by_name("admin")
   end
 
 end

@@ -5,6 +5,7 @@
         <li class="category"></li>
         <% if !logged_in? %>
         <li>Hello Blog !!! </li>
+        <li><%= link_to '關於我', profile_path(find_admin) %></li>
         <li><%= link_to "文章總覽 " , root_path %></li>
         <li><a  target=_blank href="https://github.com/a9421015642">Github</a></li>
         <% else %>

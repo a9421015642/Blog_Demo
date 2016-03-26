@@ -15,7 +15,7 @@
             <span>
               <%= link_to "show this post", article_path(article) %>
             </span>
-            <p class="pull-right"><%= article.user.updated_at %> , <%= article.user.name %></p>
+            <p class="pull-right"><%= article.user.updated_at.strftime("%b %d , %Y    ,by")%>  <%= article.user.name %></p>
             <hr>
             <% end %>
           </div>

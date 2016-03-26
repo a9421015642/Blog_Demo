@@ -9,17 +9,36 @@
       <div class="container">
        <div class="col-md-1"></div>
        <div class="col-md-8">
+       <div>
+        遊客只可以瀏覽
+        <br>
+        註冊會員 可以瀏覽/流言/按讚
+        <br>
+        管理者可以瀏覽全部功能
+         <br>
+        只有管理者可以新增/編輯/刪除 文章 
+        <br>
+        管理者id: admin 
+        <br>
+        管理者pw: 123
+       </div>
+       <hr>
+       <br>
        <%  if user_profile?  %>
-       <h3>姓名 : <%= user_profile_find.chinesename%></h3>
-       <h3>英文姓名 : <%= user_profile_find.englishname%></h3>
-       <h3>綽號 : <%= user_profile_find.nickname%></h3>
-       <h3>性別 : <%= user_profile_gender%></h3>
-       <h3>生日 : <%= user_profile_find.birthday%></h3>
-       <h3>住址 : <%= user_profile_find.address%></h3>
-       <h3>手機 : <%= user_profile_find.phone%></h3>
-       <div class="pull-right"><%= link_to "編輯個人資料", edit_profile_path(current_user) , class: 'btn btn-primary' %></div>
-       <%  else  %>
-       <%= link_to "新增個人資料", new_profile_path , class: 'btn btn-primary' %>
+         <h3>姓名 : <%= user_profile_find.chinesename%></h3>
+         <h3>英文姓名 : <%= user_profile_find.englishname%></h3>
+         <h3>綽號 : <%= user_profile_find.nickname%></h3>
+         <h3>性別 : <%= user_profile_gender%></h3>
+         <h3>生日 : <%= user_profile_find.birthday%></h3>
+         <h3>住址 : <%= user_profile_find.address%></h3>
+         <h3>手機 : <%= user_profile_find.phone%></h3>
+         <%  if(current_user_grade?) %>
+           <div class="pull-right"><%= link_to "編輯個人資料", edit_profile_path(current_user) , class: 'btn btn-primary' %></div>
+          <%  end  %>
+      <%  else  %>
+        <%  if(current_user_grade?) %>
+           <%= link_to "新增個人資料", new_profile_path , class: 'btn btn-primary' %>
+        <%  end  %>
        <%  end  %>
        </div>
        <div class="col-md-3"></div>
