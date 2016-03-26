@@ -25,7 +25,7 @@ class ProfilesController < ApplicationController
 
   def edit
     @categories = Category.all
-    @profile =  Profile.find(params[:id])
+    @profile =  Profile.find_by(user_id: params[:id])
   end
   def update
     @profile = Profile.find(params[:id])    
