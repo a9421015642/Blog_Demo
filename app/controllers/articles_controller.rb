@@ -61,8 +61,6 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
     @comment_article = Comment.where(article_id: @article.id)
     @like_article = Like.where(article_id: @article.id)
-    # @comment_article = destroy_table_data(@comment_article , @article )
-    # @like_article = destroy_table_data(Like , @article )
     
       if @article.destroy!
         @comment_article.each do |t|

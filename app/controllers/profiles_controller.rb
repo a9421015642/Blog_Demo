@@ -31,7 +31,7 @@ class ProfilesController < ApplicationController
     @profile = Profile.find(params[:id])    
       
       if @profile.update!(profile_params)
-      redirect_to profile_path  
+      redirect_to profile_path(find_admin)  
     else
       render :edit
     end 
